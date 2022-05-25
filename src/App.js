@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {Button} from "./components/Button"
+import {Logo} from "./components/Logo"
+import {Link} from "./components/Link"
 
 function App() {
+  let word = [{props:"Services"},{props:"Projects"},{props:"About"}] ;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='navbar'>
+       <div className="logo">
+       <Logo />
+       </div>
+       <div className="link">
+       <Link {...word[0]}/>
+       <Link {...word[1]}/>
+       <Link {...word[2]}/>
+       </div>
+       <div className="btn">
+       <Button />
+       </div>
+     </div>
     </div>
   );
 }
